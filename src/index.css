@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a2a] text-white overflow-x-hidden;
+    background-image: radial-gradient(circle at 50% 50%, #1a1a4a 0%, #0a0a2a 100%);
+  }
+}
+
+@layer components {
+  .kbc-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 border-2 border-blue-400 rounded-full px-8 py-3 font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(59,130,246,0.3)];
+  }
+
+  .kbc-card {
+    @apply bg-[#1a1a4a]/80 backdrop-blur-md border border-white/10 rounded-3xl shadow-2xl;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #1e3a8a #0a0a2a;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0a0a2a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-900 rounded-full border-2 border-[#0a0a2a];
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-800;
+}
